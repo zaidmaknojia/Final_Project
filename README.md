@@ -12,7 +12,7 @@ A small language model running on a laptop answers biomedical research questions
   - **E+:** the question with the abstract's evidence paragraphs.
   - **E−:** the question alone.
 
-The analysis was **pre-registered in code**: every threshold, the calibration map and the metric code were fitted on a development split, then frozen with SHA-256 locks, before a single test answer existed. The test split was then run exactly once. It took 22,000 local model calls at zero cost.
+The analysis uses **SHA-256 locks** to record the run configuration, analysis code, development-fitted thresholds and calibration map. The recorded workflow froze these before the test run, then ran the test split once. The current squashed Git history does not independently establish that chronology. It took 22,000 local model calls at zero cost.
 
 ## Key results (500 test questions)
 
@@ -157,14 +157,16 @@ python -m pubmedqa_abst.posthoc             # exploratory analyses -> results/po
 python -m pubmedqa_abst.report_numbers      # LaTeX macros and tables for the write-up
 ```
 
-## Pre-registration
+## Analysis locks
 
-Two locks in `freeze/` record SHA-256 hashes and are committed with timestamps (UTC, Nov 21, 2026):
+Two locks in `freeze/` record SHA-256 hashes and contain creation timestamps (UTC, Nov 21, 2026). The table describes the recorded workflow; these file timestamps are self-reported, and the original commit chronology is no longer present in the squashed history.
 
 | Lock | Time | Covers | When it happened |
 |---|---|---|---|
 | `protocol.lock.json` | 16:33:26 | the prompt, the run config, and the data, client, parser and runner code | before any dev call |
 | `evaluation.lock.json` | 18:51:17 | the thresholds, the isotonic map, the protocol lock, and the scoring, metric and bootstrap code | after both dev runs finished, 10 seconds before the first test call |
+
+The hashes check that the covered files match the recorded versions. They do not independently prove when the locks were created or when test outputs first existed.
 
 To check that nothing locked has changed (it prints nothing on success):
 

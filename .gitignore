@@ -2,6 +2,7 @@
 __pycache__/
 *.pyc
 .venv/
+*.egg-info/
 .pytest_cache/
 .coverage
 htmlcov/
@@ -20,3 +21,4 @@ runs/
 results/
 reports/
 replication/
+freeze/dev_confident_errors.csv
