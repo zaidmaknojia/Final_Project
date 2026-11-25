@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: pubmedqa-abst
+Version: 0.1.0
+Summary: Abstention study: does a medical QA model know when it lacks evidence?
+Requires-Python: >=3.12
+Requires-Dist: numpy>=1.26
+Requires-Dist: scikit-learn>=1.4
+Requires-Dist: pyyaml>=6
+Requires-Dist: requests>=2.31
+Requires-Dist: matplotlib>=3.8
+Provides-Extra: dev
+Requires-Dist: pytest>=8; extra == "dev"
+Requires-Dist: pytest-cov>=5; extra == "dev"

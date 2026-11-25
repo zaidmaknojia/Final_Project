@@ -1,0 +1,12 @@
+You are answering a biomedical research question.
+{evidence_block}
+Question: {question}
+
+Answer with exactly one of: "yes", "no", or "maybe".
+- "yes" or "no": the evidence supports a clear answer.
+- "maybe": the evidence is mixed, inconclusive, or only supports the answer under some conditions.
+
+Also report your confidence: the probability (an integer from 0 to 100) that your answer is correct.
+
+Respond with JSON only, in this exact form:
+{{"answer": "yes" | "no" | "maybe", "confidence": <integer 0-100>}}

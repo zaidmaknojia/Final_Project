@@ -1,0 +1,34 @@
+{
+  "created": "2026-11-21T16:33:26.408841+00:00",
+  "files": {
+    "root:configs/run.yaml": "3ed8df8e0503415186bbcaabfb41fe47312806ad080f37c9e67be0610b6bd583",
+    "root:configs/prompts/v1.txt": "fbfe4d6840d28325f1fb1df19a230bf41b88ce9123d906d8ca99399f09183321",
+    "root:src/pubmedqa_abst/parse.py": "e2c72fd8ca4cea98ebefa81aaf470c23b8f95353fd51bd50c15f6d1965dad2b8",
+    "root:src/pubmedqa_abst/data.py": "9b82f4afc78d68508a23b67260c8ebc651ad1827635cc50d0b57b4d4ba6d429b",
+    "root:src/pubmedqa_abst/client.py": "aaafc44e217e95e5a390acfbdd53636b39c60ec0d2abf4b680a3aa486f29c557",
+    "root:src/pubmedqa_abst/runner.py": "602c9a86c6269c8c51c75ab2326e2568eb333b9ba674f0def578de18bd79ac92"
+  },
+  "generation": {
+    "model": "gemma4:e4b",
+    "model_digest": "c6eb396dbd59",
+    "K": 10,
+    "T": 0.7,
+    "greedy_seed": 20261121
+  },
+  "analysis": {
+    "ece_bins": 10,
+    "bootstrap_B": 10000,
+    "bootstrap_seed": 20261130,
+    "coverage_targets": [
+      0.5,
+      0.7,
+      0.9
+    ]
+  },
+  "planned_comparisons": [
+    "cons_vs_verb",
+    "threshold_vs_accept_all",
+    "eplus_vs_eminus",
+    "iso_vs_raw_verb"
+  ]
+}

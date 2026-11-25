@@ -1,0 +1,15 @@
+# Frozen by `cli lock-protocol` after the timing pilot. Spec: docs/superpowers/specs/2026-11-21-unified-abstention-design.md
+model: gemma4:e4b
+model_digest: c6eb396dbd59
+ollama_url: http://localhost:11434
+greedy_seed: 20261121
+K: 10
+T: 0.7
+timeout_s: 120
+max_retries: 3
+coverage_targets: [0.5, 0.7, 0.9]
+ece_bins: 10
+bootstrap_B: 10000
+bootstrap_seed: 20261130
+error_threshold_target: 0.7
+example_seed: 20261124
