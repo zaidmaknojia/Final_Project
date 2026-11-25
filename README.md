@@ -82,6 +82,7 @@ flowchart LR
 configs/             run settings (run.yaml) and the prompt template
 data/manifest.json   pinned dataset revision, SHA-256 checksums, dev/test split
 freeze/              the two SHA-256 locks, frozen thresholds and isotonic map
+runs/                original dev/test outputs and cached token probabilities
 src/pubmedqa_abst/   the pipeline (below)
 tests/               167 unit and integration tests
 validation/          an independent re-implementation of every reported number
@@ -145,8 +146,8 @@ python -m pubmedqa_abst.cli $D run --split test --condition E-
 python -m pubmedqa_abst.cli $D evaluate && python -m pubmedqa_abst.cli $D figures
 ```
 
-**Re-evaluate the original runs.** The original model outputs (`runs/`, about 9 MB of answers and item IDs) are not in the repository and are available from the author.
-- With them in place, the locked evaluation is deterministic.
+**Re-evaluate the original runs.** The original model outputs are included in [`runs/`](runs/) (about 10 MB of answers and item IDs): four dev/test run directories, each with `manifest.json` and `raw.jsonl`, plus the four cached exploratory token-probability files in `runs/tokenprob/`. Smoke/pilot runs and operational logs are excluded.
+- After installing the package and downloading PubMedQA as described above, the locked evaluation is deterministic and needs no model calls.
 - It refuses to run if any locked file has changed.
 
 ```bash

@@ -7,7 +7,18 @@ __pycache__/
 .coverage
 htmlcov/
 data/raw/
-runs/
+# Keep original evaluation artifacts; ignore new runs and operational logs.
+runs/*
+!runs/58dcfe2d7cc8/
+!runs/680dfe691a7d/
+!runs/9dea758a6b09/
+!runs/cc2705b62a16/
+!runs/tokenprob/
+runs/tokenprob/*
+!runs/tokenprob/dev_E+.jsonl
+!runs/tokenprob/dev_E-.jsonl
+!runs/tokenprob/test_E+.jsonl
+!runs/tokenprob/test_E-.jsonl
 *.zip
 .superpowers/
 # LaTeX build artifacts

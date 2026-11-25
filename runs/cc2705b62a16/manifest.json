@@ -1,0 +1,40 @@
+{
+  "run_id": "cc2705b62a16",
+  "split": "dev",
+  "condition": "E+",
+  "env": {
+    "ollama_version": "0.20.2",
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  "model": "gemma4:e4b",
+  "K": 10,
+  "T": 0.7,
+  "greedy_seed": 20261121,
+  "options": {
+    "stream": false,
+    "think": false,
+    "format": {
+      "type": "object",
+      "properties": {
+        "answer": {
+          "type": "string",
+          "enum": [
+            "yes",
+            "no",
+            "maybe"
+          ]
+        },
+        "confidence": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "required": [
+        "answer",
+        "confidence"
+      ]
+    }
+  },
+  "started": "2026-11-21T16:33:34.715477+00:00"
+}
